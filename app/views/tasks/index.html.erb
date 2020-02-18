@@ -1,0 +1,21 @@
+<div class="d-flex p-4">
+  <h1>My To-do List:</h1>
+  <%= link_to new_task_path do  %>
+    <i class="fa fa-pencil-square display-4 ml-3" aria-hidden="true"></i>
+  <% end %>
+</div>
+<div class="container ml-0">
+  <% @tasks.each do |task| %>
+  <div class="d-flex align-items-center shadow-sm p-3 mb-5 bg-white rounded">
+   <%= link_to check_task_path(task) do  %>
+    <i class=" <%= task.completed ? 'fa fa-check-square-o': 'fa fa-square-o' %> display-4"> </i>
+    <% end %>
+      <div class="container">
+        <%= link_to task_path(task) do  %>
+        <h2><%= task.title %></h2>
+        <% end %>
+        <p><%= task.details %></p>
+      </div>
+  </div>
+  <% end %>
+</div>

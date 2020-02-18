@@ -1,0 +1,20 @@
+<div class="container ml-0">
+  <%= link_to tasks_path do  %>
+    <h2 class="ml-3 mt-3">Back to tasks</h2>
+  <% end %>
+  <div class="d-flex align-items-center shadow-sm p-3 mb-5 bg-white rounded">
+    <%= link_to check_task_path(@task) do  %>
+    <i class=" <%= @task.completed ? 'fa fa-check-square-o': 'fa fa-square-o' %> display-4"> </i>
+    <% end %>
+      <div class="container">
+        <h2><%= @task.title %></h2>
+        <p><%= @task.details %></p>
+      </div>
+      <%= link_to edit_task_path(@task) do  %>
+      <i class="fa fa-pencil h4" aria-hidden="true"></i>
+      <% end %>
+      <%= link_to task_path(@task), method: :delete do %>
+      <i class="fa fa-trash-o h4 ml-4" aria-hidden="true"></i>
+      <% end %>
+  </div>
+</div>
