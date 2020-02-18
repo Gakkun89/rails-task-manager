@@ -13,7 +13,7 @@
       <%= link_to edit_task_path(@task) do  %>
       <i class="fa fa-pencil h4" aria-hidden="true"></i>
       <% end %>
-      <%= link_to task_path(@task), method: :delete do %>
+      <%= link_to task_path(@task), method: :delete, data: { confirm: "Are you sure?" } do %>
       <i class="fa fa-trash-o h4 ml-4" aria-hidden="true"></i>
       <% end %>
   </div>
